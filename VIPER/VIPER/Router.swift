@@ -28,8 +28,8 @@ class UserRouter: AnyRouter {
         var presenter: AnyPresenter = UserPresenter()
         
         view.presenter = presenter
-        
-        interactor.presenter = presenter
+        interactor.output = presenter as? UserPresenter
+        //interactor.presenter = presenter
         
         presenter.router = router
         presenter.view = view

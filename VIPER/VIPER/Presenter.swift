@@ -19,7 +19,7 @@ protocol AnyPresenter {
     var view: AnyView? { get set }
     var interactor: AnyInteractor? { get set }
     
-    func interactorDidFecthUsers(with result: Result<[User], Error>)
+    //func interactorDidFecthUsers(with result: Result<[User], Error>)
 }
 
 class UserPresenter: AnyPresenter {
@@ -33,12 +33,22 @@ class UserPresenter: AnyPresenter {
         }
     }
     
-    func interactorDidFecthUsers(with result: Result<[User], Error>) {
-        switch result {
-        case .success(let users):
-            view?.update(with: users)
-        case .failure:
-            view?.update(with: "Something went wrong")
-        }
+//    func interactorDidFecthUsers(with result: Result<[User], Error>) {
+//        switch result {
+//        case .success(let users):
+//            view?.update(with: users)
+//        case .failure:
+//            view?.update(with: "Something went wrong")
+//        }
+//    }
+}
+
+extension UserPresenter: AnyInteractorOutput {
+    func success(users: [User]) {
+        view?.update(with: users)
+    }
+    
+    func failed(error: Error) {
+        view?.update(with: "Something went wrong")
     }
 }

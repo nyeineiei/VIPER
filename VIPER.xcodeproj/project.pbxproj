@@ -16,6 +16,7 @@
 		CABEAC2D2A5671620029F652 /* Presenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = CABEAC2C2A5671620029F652 /* Presenter.swift */; };
 		CABEAC2F2A5671710029F652 /* Interactor.swift in Sources */ = {isa = PBXBuildFile; fileRef = CABEAC2E2A5671710029F652 /* Interactor.swift */; };
 		CABEAC312A56731E0029F652 /* Entity.swift in Sources */ = {isa = PBXBuildFile; fileRef = CABEAC302A56731E0029F652 /* Entity.swift */; };
+		CABEAC352A5803240029F652 /* InteractorOutput.swift in Sources */ = {isa = PBXBuildFile; fileRef = CABEAC342A5803240029F652 /* InteractorOutput.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -30,6 +31,7 @@
 		CABEAC2C2A5671620029F652 /* Presenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Presenter.swift; sourceTree = "<group>"; };
 		CABEAC2E2A5671710029F652 /* Interactor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Interactor.swift; sourceTree = "<group>"; };
 		CABEAC302A56731E0029F652 /* Entity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Entity.swift; sourceTree = "<group>"; };
+		CABEAC342A5803240029F652 /* InteractorOutput.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InteractorOutput.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -80,6 +82,7 @@
 				CABEAC2C2A5671620029F652 /* Presenter.swift */,
 				CABEAC302A56731E0029F652 /* Entity.swift */,
 				CABEAC2A2A5671520029F652 /* Router.swift */,
+				CABEAC342A5803240029F652 /* InteractorOutput.swift */,
 			);
 			path = VIPER;
 			sourceTree = "<group>";
@@ -159,6 +162,7 @@
 				CABEAC2B2A5671520029F652 /* Router.swift in Sources */,
 				CABEAC312A56731E0029F652 /* Entity.swift in Sources */,
 				CABEAC142A56710F0029F652 /* AppDelegate.swift in Sources */,
+				CABEAC352A5803240029F652 /* InteractorOutput.swift in Sources */,
 				CABEAC2F2A5671710029F652 /* Interactor.swift in Sources */,
 				CABEAC162A56710F0029F652 /* SceneDelegate.swift in Sources */,
 			);
