@@ -11,7 +11,9 @@ import Foundation
 //VIR
 
 enum FetchError: Error {
-    case failed 
+    case failed
+    case serverError
+    case emptyURL
 }
 
 protocol AnyPresenter {
@@ -29,7 +31,7 @@ class UserPresenter: AnyPresenter {
     
     var interactor: AnyInteractor? {
         didSet {
-            interactor?.getUsers()
+            interactor?.getUsers(session: URLSession.shared, from: URL(string: "https://jsonplaceholder.typicode.com/users"))
         }
     }
     
