@@ -48,10 +48,11 @@ class UserInteractorTests: XCTestCase {
         let url: URL? = nil // Set the URL to nil or an empty URL
         
         interactor.output = MockInteractorOutput(expectation: expectation)
-        
+        output = interactor.output as? MockInteractorOutput
         interactor.getUsers(session: session, from: url)
 
         wait(for: [expectation], timeout: 5.0)
+        XCTAssertEqual(output!.error! as? FetchError, FetchError.emptyURL, "The expected error type is correct.")
     }
     
     func testGetUsers_DecodingFailure() {
@@ -61,11 +62,11 @@ class UserInteractorTests: XCTestCase {
         let session = MockURLSession(data: invalidData, urlResponse: nil, error: nil)
         
         interactor.output = MockInteractorOutput(expectation: expectation) // MockInteractorOutput implements AnyInteractorOutput
-        
+        output = interactor.output as? MockInteractorOutput
         interactor.getUsers(session: session, from: url)
 
         wait(for: [expectation], timeout: 5.0)
-        // Additional assertions can be performed based on the expected behavior
+        XCTAssertEqual(output!.error! as? FetchError, FetchError.serverError, "The expected error type is correct.")
     }
 }
 
